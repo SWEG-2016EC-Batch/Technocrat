@@ -4,7 +4,7 @@ int main (){
 float weight;
 float height;
 float BMI;
-char another;
+char choice;
 do{
 cout<<"enter weight of a person ";
 cin>>weight;
@@ -21,7 +21,7 @@ if(BMI < 18.5){
         cout<<"your Body Mass Index is "<<BMI<< " .So ,you are over weight"<<endl;
     }
 cout<<"do you want to calculate for another person ,type ('y' or 'Y' for continuation )or ('n' or 'N' for termination)";
-cin>>another;
+cin>>choice;
 }
 while(another == 'Y'|| another == 'y');
  cout<<"Thank you for your patience";
