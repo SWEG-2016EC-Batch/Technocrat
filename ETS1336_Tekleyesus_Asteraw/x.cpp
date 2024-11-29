@@ -23,7 +23,7 @@ if(BMI < 18.5){
 cout<<"do you want to calculate for another person ,type ('y' or 'Y' for continuation )or ('n' or 'N' for termination)";
 cin>>choice;
 }
-while(another == 'Y'|| another == 'y');
+while(choice == 'Y'|| choice == 'y');
  cout<<"Thank you for your patience";
 return 0;
 }
