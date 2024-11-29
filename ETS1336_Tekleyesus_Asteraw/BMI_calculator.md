@@ -25,4 +25,4 @@ pseudocode
                      go to step 2
     9.else
           go to step 10
-    10.end
+    10.stop
