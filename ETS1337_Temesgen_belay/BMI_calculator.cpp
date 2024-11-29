@@ -22,17 +22,17 @@ int main() {
         bmi = weight / (height * height);
 
         // Display BMI
-        cout << "BMI: " << bmi << endl;
+        cout << " your BMI is : " << bmi << endl;
 
         // Provide BMI classification
         if (bmi < 18.5) {
-            cout << "Category: Underweight" << endl;
+            cout << "you are under weight " << endl;
         } else if (bmi >= 18.5 && bmi < 24.9) {
-            cout << "Category: Normal weight" << endl;
+            cout << "you are a normal weight " << endl;
         } else if (bmi >= 25 && bmi < 29.9) {
-            cout << "Category: Overweight" << endl;
+            cout << "you are an over weight " << endl;
         } else {
-            cout << "Category: Obesity" << endl;
+            cout << "you are an obese" << endl;
         }
 
         // Ask if the user wants to calculate BMI for another person
@@ -41,7 +41,7 @@ int main() {
 
     } while (choice == 'y' || choice == 'Y'); // Repeat if the user enters 'y' or 'Y'
 
-    cout << "Program terminated. Goodbye!" << endl;
+    cout << "we have finished. Goodbye!" << endl;
     return 0;
 }
 
