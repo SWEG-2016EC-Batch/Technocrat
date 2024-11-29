@@ -8,7 +8,7 @@ int main()
   double miles_per_gallons;
   double miles_left;
   
-  cout << "Enter the gallons in the aoutomobile: ";
+  cout << "Enter the gallons in the aoutomobile fuel tank: ";
   cin>>gallons;
   cout << "Enter the miles_per_gallons of the automobile: ";
   cin >> miles_per_gallons;
