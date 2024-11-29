@@ -14,8 +14,16 @@ int main() {
     // ask the user for input
     cout << "Enter the capacity of the fuel tank (in gallons): ";
     cin >> tankCapacity;
+    if (tankCapacity <= 0) {
+        cout << "Error: Tank capacity must be a positive number." << endl;
+        return 1; // Exit the program with an error code
+    }
     cout << "Enter the fuel efficiency (in miles per gallon): ";
     cin >> milesPerGallon;
+    if (milesPerGallon <= 0) {
+        cout << "Error: Fuel efficiency must be a positive number." << endl;
+        return 1; // Exit the program with an error code
+    }
 
     // Calculate the total miles
     totalMiles = tankCapacity * milesPerGallon;//we can also use() for the operator, but we can also omit it
