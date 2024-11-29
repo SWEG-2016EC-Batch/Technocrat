@@ -1,4 +1,4 @@
-//Write a program that find the result of the expression x^y where the value of X and Y are entered by the user.//
+//Write a program that find the result of the expression x^y where the value of X and Y are entered by the user.
 #include <iostream>
 #include <cmath> // For the pow() function
 using namespace std;
