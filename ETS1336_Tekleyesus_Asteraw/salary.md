@@ -24,6 +24,6 @@ problem analysis
       9.display the bonus payment
       10.display the gross Salary
       11.display the net Salary
-      12.end
+      12.stop
 
 
