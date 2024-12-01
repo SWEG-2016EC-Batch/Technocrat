@@ -1,21 +1,40 @@
 #include <iostream>
+#include <cmath>  // Include cmath for the pow() function
 using namespace std;
 
 int main() {
-    // Declare variables for fuel tank capacity, miles per gallon, and miles per tank
-    float fuel_tank_capacity, miles_per_gallon, miles_per_tank;
+    double x, y, result;
+    bool validInput = false;
 
-    // Input fuel tank capacity and miles per gallon
-    cout << "Enter the fuel tank capacity in gallons: ";
-    cin >> fuel_tank_capacity;
-    cout << "Enter the miles per gallon the automobile can drive: ";
-    cin >> miles_per_gallon;
+    // Loop until valid input is entered
+    while (!validInput) {
+        // Ask for the value of x
+        cout << "Enter the value of x: ";
+        cin >> x;
 
-    // Calculate miles per tank
-    miles_per_tank = fuel_tank_capacity * miles_per_gallon;
+        // Check if the input for x is valid
+        if (cin.fail()) {
+            cout << "Invalid input for x! Please enter a valid number." << endl;
+            cin.clear();  // Clear the error flag
+            cin.ignore(10000, '\n');  // Ignore the invalid input
+        } else {
+            // Ask for the value of y
+            cout << "Enter the value of y: ";
+            cin >> y;
 
-    // Output the result
-    cout << "The automobile can be driven " << miles_per_tank << " miles without refueling." << endl;
+            // Check if the input for y is valid
+            if (cin.fail()) {
+                cout << "Invalid input for y! Please enter a valid number." << endl;
+                cin.clear();  // Clear the error flag
+                cin.ignore(10000, '\n');  // Ignore the invalid input
+            } else {
+                // Both inputs are valid, calculate the result
+                result = pow(x, y);
+                cout << "The result of " << x << " raised to the power of " << y << " is: " << result << endl;
+                validInput = true;  // Set validInput to true to exit the loop
+            }
+        }
+    }
 
     return 0;
 }
