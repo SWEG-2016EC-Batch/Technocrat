@@ -1,40 +1,42 @@
 #include <iostream>
-#include <cmath>  // Include cmath for the pow() function
+#include <string>
 using namespace std;
 
 int main() {
-    double x, y, result;
-    bool validInput = false;
+    string employee_name;
+    float weekly_working_hours, bonus_rate_per_hour, base_salary;
+    float bonus_payment, gross_salary, net_salary;
 
-    // Loop until valid input is entered
-    while (!validInput) {
-        // Ask for the value of x
-        cout << "Enter the value of x: ";
-        cin >> x;
+    // Input: employee name
+    cout << "Enter employee name: ";
+    getline(cin, employee_name);
 
-        // Check if the input for x is valid
-        if (cin.fail()) {
-            cout << "Invalid input for x! Please enter a valid number." << endl;
-            cin.clear();  // Clear the error flag
-            cin.ignore(10000, '\n');  // Ignore the invalid input
-        } else {
-            // Ask for the value of y
-            cout << "Enter the value of y: ";
-            cin >> y;
+    // Input: weekly working hours
+    cout << "Enter weekly working hours: ";
+    cin >> weekly_working_hours;
 
-            // Check if the input for y is valid
-            if (cin.fail()) {
-                cout << "Invalid input for y! Please enter a valid number." << endl;
-                cin.clear();  // Clear the error flag
-                cin.ignore(10000, '\n');  // Ignore the invalid input
-            } else {
-                // Both inputs are valid, calculate the result
-                result = pow(x, y);
-                cout << "The result of " << x << " raised to the power of " << y << " is: " << result << endl;
-                validInput = true;  // Set validInput to true to exit the loop
-            }
-        }
-    }
+    // Input: bonus rate per hour
+    cout << "Enter bonus rate per hour: ";
+    cin >> bonus_rate_per_hour;
+
+    // Input: base salary
+    cout << "Enter base salary: ";
+    cin >> base_salary;
+
+    // Calculate bonus payment
+    bonus_payment = weekly_working_hours * bonus_rate_per_hour;
+
+    // Calculate gross salary
+    gross_salary = base_salary + bonus_payment;
+
+    // Calculate net salary (after pension and tax deductions)
+    net_salary = gross_salary - (gross_salary * (0.05 + 0.15));
+
+    // Output results
+    cout << "Employee Name: " << employee_name << endl;
+    cout << "Gross Salary: " << gross_salary << endl;
+    cout << "Net Salary: " << net_salary << endl;
+    cout << "Bonus Payment: " << bonus_payment << endl;
 
     return 0;
 }
