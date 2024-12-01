@@ -1,28 +1,34 @@
-PROBLEM ANALYSIS ::
-Problem Statement:
-The program calculates the result of raising a number 
-x (base) to the power y (exponent). Both values x and 𝑦
-are entered by the user. The result is computed using the formula:
+PROBLEM ANALYSIS:
 
-Result= x^y
-Input Base
-1) (x): A floating-point or integer number.
-2) Exponent (y): A floating-point or integer number.
+INPUT:
 
-Process:
-Prompt the user to enter the base (x).
-Prompt the user to enter the exponent (y).
-Use a power function or loop to calculate  X^Y
-Display the result to the user.
+the base number as x and an exponent y.
+
 OUTPUT:
-the result of  X^Y
 
-ALGORITHM USING PSEUDOCODE:
-Start Program:
-Display "Enter the base (x):"
-Input x
-Display "Enter the exponent (y):"
-Input y
-Calculate result = x raised to the power y using the formula result = pow(x, y)
-Display "The result of", x, "raised to the power", y, "is:", result
-End Program:
+the value of x raised by  y.
+
+
+PROCESS: 
+
+compute the value of the result using the formula  x^
+y
+
+
+
+PSEUDOCODE:
+
+Step 1: start 
+
+Step 2:read the base (x) and the power (y)
+
+Step 3:compute M<--x^
+y
+
+Step 4:print M
+
+Step 5:Stop 
+
+FLOWCHART:
+
+![alt text](power.jpg)
