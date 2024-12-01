@@ -1,37 +1,35 @@
 PROBLEM ANALYSIS:
-The program calculates the number of miles an automobile can travel without refueling. It takes the tank capacity (in gallons) and the miles per gallon (fuel efficiency) as inputs and calculates the total miles the car can travel
-Input:
 
-Tank capacity (in gallons) — an integer value.
-Miles per gallon — an integer value representing the fuel efficiency.
-Process
+input: 
 
-Read the tank capacity.
-Read the miles per gallon.
-Calculate the total miles the automobile can travel using the formula:
-No of Miles
-=
-Tank Capacity
-×
-Miles Per Gallon
-No of Miles=Tank Capacity×Miles Per Gallon
-Output:
+capacity of the fuel tank
 
-Total miles the automobile can travel without refueling.
+miles per galon a car traveles
+
+output:
+
+number of miles a car can be driven without refueling
+
+process:
+
+compute number of miles to be driven with out 
+ Refueling using the formula (m) m/g*g
+
+PSEUDOCODE:
 
 
-ALGORITHM USING PSUEODOCODE:
+ Number of miles driven with out refueling 
+ 
+Step 1: start 
 
-Start Program:
+Step 2:read capacity of fuel tank(g) and miles/gallon to Be driven (m/g) 
 
-Display "Input the tank capacity in gallons:"
-Input tank_capacity
+Step 3:compute number of miles to be driven with out 
+ Refueling (m) m/g*g
 
-Display "Input the miles per gallon the automobile goes:"
-Input miles_per_gallon
+Step 4:print number of miles (m)
 
-Calculate no_of_miles = tank_capacity * miles_per_gallon
+Step 5:stop 
 
-Display "The miles your automobile can go without refueling is:", no_of_miles
-
-End Program:
+FLOWCHART
+![alt text](AUTOMOBILE.jpg)
