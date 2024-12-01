@@ -2,14 +2,14 @@
 #include<cmath>
 using namespace std;
 int main(){
-double number1;
-double number2;
+double x;
+double y;
 double result;
 cout<<"enter the base number";
-cin>>number1;
+cin>>x;
 cout<<"enter the exponent";
-cin>>number2;
-result = pow(number1 , number2);
-cout<<number1<< " the power of "<<number2<< " is "<<result;
+cin>>y;
+result = pow(x , y);
+cout<<x<< " the power of "<<y<< " is "<<result;
  return 0;
 }
