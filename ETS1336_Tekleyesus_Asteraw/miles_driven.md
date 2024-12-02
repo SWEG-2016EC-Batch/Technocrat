@@ -12,6 +12,9 @@
         4.compute miles driven without refeulment as gallons in the tank multiplied by miles per gallon
         5.print miles driven without refeulment 
         6.stop
+
+
+```mermaid        
 flowchart TD
 A([start])-->B[/raed gallons/]
 B-->C[/read miles per gallon/]
