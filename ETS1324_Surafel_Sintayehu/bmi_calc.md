@@ -32,24 +32,27 @@ This program calculates the Body Mass Index (BMI) of a user based on their weigh
 
 ```mermaid
 flowchart TD
-    start([Start]) --> inputNum[Input number of people to calculate BMI]
-    inputNum --> loopStart{Loop through each person}
-    loopStart -->|Yes| inputWeight[Input weight]
-    inputWeight --> validateWeight{Weight > 0?}
-    validateWeight -->|No| weightError[Invalid weight] --> inputWeight
-    validateWeight -->|Yes| inputHeight[Input height]
-    inputHeight --> validateHeight{Height > 0?}
-    validateHeight -->|No| heightError[Invalid height] --> inputHeight
+    start([Start]) --> inputNum[/Input number of people to calculate BMI/]
+    inputNum --> loopStart{Loop through each person?}
+    loopStart -->|Yes| inputWeight[/Input weight/]
+    inputWeight --> validateWeight{Is weight > 0?}
+    validateWeight -->|No| weightError[/Invalid weight. Re-enter weight./]
+    weightError --> inputWeight
+    validateWeight -->|Yes| inputHeight[/Input height/]
+    inputHeight --> validateHeight{Is height > 0?}
+    validateHeight -->|No| heightError[/Invalid height. Re-enter height./]
+    heightError --> inputHeight
     validateHeight -->|Yes| calculateBMI[Calculate BMI]
     calculateBMI --> classifyBMI{Classify BMI}
-    classifyBMI -->|BMI < 18.5| underweight[Underweight]
-    classifyBMI -->|18.5 <= BMI <= 24.9| normal[Normal weight]
-    classifyBMI -->|BMI > 24.9| overweight[Overweight]
-    underweight --> nextPerson
+    classifyBMI -->|BMI < 18.5| underweight[/Underweight/]
+    classifyBMI -->|18.5 <= BMI <= 24.9| normal[/Normal weight/]
+    classifyBMI -->|BMI > 24.9| overweight[/Overweight/]
+    underweight --> nextPerson[Next person?]
     normal --> nextPerson
     overweight --> nextPerson
-    nextPerson --> loopStart
-    loopStart -->|No| finish([Finish])
+    nextPerson -->|Yes| loopStart
+    nextPerson -->|No| finish([Finish])
+
 
 
 ```  
