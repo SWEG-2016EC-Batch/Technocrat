@@ -29,7 +29,7 @@
    #### 10.stop
 
 
-
+```mermaid
   flowchart TD
 A([start])-->B[/read weight/]
 B-->C[/read height/]
@@ -44,7 +44,7 @@ H--->J
 I--->J
 J---|yes|B
 J---|no|K([stop])
-
+```
 
 
 
