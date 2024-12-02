@@ -31,6 +31,18 @@ step 3 calculate  bonusPayment = weeklyHours * bonusRate.
 step 4 dsplay  employeeName,baseSalary,bonusPayment,grossSalary,total deductions (pension + tax),netSalary.
 step 5 end 
 
+flowchart TD
+A([Start]) --> B[Input employee name]
+B --> C[Input weekly working hours]
+C --> D[Input bonus rate per hour]
+D --> E[Input base salary]
+E --> F[Calculate bonusPayment = weeklyHours * bonusRate]
+F --> G[Calculate grossSalary = baseSalary + bonusPayment]
+G --> H[Calculate pension = grossSalary * 0.05]
+H --> I[Calculate tax = grossSalary * 0.15]
+I --> J[Calculate netSalary = grossSalary - (pension + tax)]
+J --> K[Display employee name, base salary, bonus payment, gross salary, deductions, and net salary]
+K --> L([End])
 
                   
 
