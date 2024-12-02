@@ -21,3 +21,16 @@ If invalid, print an error message and terminate the program.
 step 4 If both inputs are valid, calculate the total miles as tankCapacity * milesPerGallon.
 step 5 display the result 
 step 6 end
+
+flowchart TD
+A([Start]) --> B[/Input fuel tank capacity in gallons/]
+B --> C{Is tank capacity > 0?}
+C -- No --> D[/Error: Tank capacity must be positive/]
+D --> E([End])
+C -- Yes --> F[/Input fuel efficiency in miles per gallon/]
+F --> G{Is fuel efficiency > 0?}
+G -- No --> H[/Error: Fuel efficiency must be positive/]
+H --> E
+G -- Yes --> I[Calculate total miles = tankCapacity * milesPerGallon]
+I --> J[Display "The automobile can be driven totalMiles miles without refueling."]
+J --> E
