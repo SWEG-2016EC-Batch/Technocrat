@@ -1,35 +1,24 @@
-PROBLEM ANALYSIS:
+**Problem Analysis**:  
+*Input*: fuel_tank_capacity in gallons (float), miles_per_gallon (float)  
+*Output*: miles_per_tank (float)  
+*Process*:
+- input fuel_tank_capacity and miles_per_gallon
+- calculate miles_per_tank as fuel_tank_capacity * miles_per_gallon
+- print miles_per_tank
 
-input: 
+**Flowchart**:
 
-capacity of the fuel tank
+```mermaid
+flowchart TD
+    start([start]) --> input[/input fuel_tank_capacity and miles_per_gallon/]
+		input --> process["miles_per_tank = fuel_tank_capacity * miles_per_gallon"]
+		process --> print[/print miles_per_tank/]
+		print --> stop([stop])
+```
 
-miles per galon a car traveles
-
-output:
-
-number of miles a car can be driven without refueling
-
-process:
-
-compute number of miles to be driven with out 
- Refueling using the formula (m) m/g*g
-
-PSEUDOCODE:
-
-
- Number of miles driven with out refueling 
- 
-Step 1: start 
-
-Step 2:read capacity of fuel tank(g) and miles/gallon to Be driven (m/g) 
-
-Step 3:compute number of miles to be driven with out 
- Refueling (m) m/g*g
-
-Step 4:print number of miles (m)
-
-Step 5:stop 
-
-FLOWCHART
-![alt text](AUTOMOBILE.jpg)
+**Pseudocode**:
+1. START
+2. READ fuel_tank_capacity and miles_per_gallon
+3. CALCULATE miles_per_tank as fuel_tank_capacity * miles_per_gallon
+4. PRINT miles_per_tank
+5. STOP
