@@ -27,6 +27,9 @@
          14.print gross salary
          15.print net salary
          16.stop
+
+
+ ```mermaid        
  flowchart TD
 A([start])-->B[/read name/]
 B-->C[/read working hour/]
