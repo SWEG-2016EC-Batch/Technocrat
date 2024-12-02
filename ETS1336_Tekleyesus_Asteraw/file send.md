@@ -15,7 +15,7 @@
 
 
 
-         
+ ```mermaid        
 flowchart TD
 A([start])-->B(transmission rate =960)
 B-->C[/read file size/]
