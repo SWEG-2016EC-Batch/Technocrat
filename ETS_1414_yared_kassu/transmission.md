@@ -19,6 +19,17 @@ Step 4: print time required in hours, minutes and
  Seconds
 
 Step 5:stop
+
+
 FLOWCHART:
 
-![alt text](transmission.jpg)
+```mermaid
+flowchart TD
+    start([Start]) --> inputFileSize[Enter file size in bytes]
+    inputFileSize --> inputRate[Enter transfer rate in bytes per second]
+    inputRate --> calculateTime[Calculate total time in seconds]
+    calculateTime --> convertTime[Convert total time to days, hours, minutes, and seconds]
+    convertTime --> displayTime[Display time as days:hours:minutes:seconds]
+    displayTime --> finish([End])
+
+```
