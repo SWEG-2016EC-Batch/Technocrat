@@ -29,5 +29,24 @@ step 6 ask the user if he went to continue or not
 step 7 repeat the program if the user wents to continue 
 step 8 if not end the program 
 
+flowchart TD
+A([Start]) --> B[/Input weight in kilograms/]
+B --> C[/Input height in meters/]
+C --> D[Calculate BMI = weight / (height * height)]
+D --> E[Display BMI]
+E --> F{BMI < 18.5?}
+F -- Yes --> G[/You are underweight/]
+F -- No --> H{BMI >= 18.5 & BMI < 24.9?}
+H -- Yes --> I[/You are normal weight/]
+H -- No --> J{BMI >= 25 & BMI < 29.9?}
+J -- Yes --> K[/You are overweight/]
+J -- No --> L[/You are obese/]
+G --> M[Ask to calculate for another person]
+I --> M
+K --> M
+L --> M
+M --> N{Another person?}
+N -- Yes --> B
+N -- No --> O([End])
 
 step 2 
