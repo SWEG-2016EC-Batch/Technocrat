@@ -19,3 +19,16 @@ step 1 start
 step 2 calculate the total time by using the initialized file size and transmission rate
 step 4 display the total time in days, hours, minutes, and seconds.
 step 5 end 
+
+flowchart TD
+A([Start]) --> B[Define transmission rate = 960 characters/second]
+B --> C[Define file size = 419,430,400 bytes (400MB)]
+C --> D[Calculate total seconds = fileSize / transmissionRate]
+D --> E[Calculate days = totalSeconds / (24 * 3600)]
+E --> F[Update totalSeconds = totalSeconds % (24 * 3600)]
+F --> G[Calculate hours = totalSeconds / 3600]
+G --> H[Update totalSeconds = totalSeconds % 3600]
+H --> I[Calculate minutes = totalSeconds / 60]
+I --> J[Calculate seconds = totalSeconds % 60]
+J --> K[Display days, hours, minutes, and seconds]
+K --> L([End])
