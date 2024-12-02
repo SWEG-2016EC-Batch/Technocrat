@@ -24,15 +24,18 @@ This program calculates the result of raising a number `x` to the power of `y` (
 
 ```mermaid
 flowchart TD
-    start([Start]) --> inputX[Enter value of x]
+    start([Start]) --> inputX[/Enter value of x/]
     inputX --> validateX{Is x a valid number?}
-    validateX -->|No| errorX[Invalid input for x] --> inputX
-    validateX -->|Yes| inputY[Enter value of y]
+    validateX -->|No| errorX[/Invalid input for x. Re-enter x./]
+    errorX --> inputX
+    validateX -->|Yes| inputY[/Enter value of y/]
     inputY --> validateY{Is y a valid number?}
-    validateY -->|No| errorY[Invalid input for y] --> inputY
+    validateY -->|No| errorY[/Invalid input for y. Re-enter y./]
+    errorY --> inputY
     validateY -->|Yes| calculateResult[Calculate x^y]
-    calculateResult --> outputResult[Show result]
+    calculateResult --> outputResult[/Show result/]
     outputResult --> finish([Finish])
+
 
 
 ```
