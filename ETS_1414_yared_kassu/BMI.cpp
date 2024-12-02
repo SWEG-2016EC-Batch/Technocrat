@@ -7,11 +7,33 @@ int main() {
     do {
         double weight, height, bmi;
 
-        // Input weight and height
-        cout << "Enter weight in kilograms: ";
-        cin >> weight;
-        cout << "Enter height in meters: ";
-        cin >> height;
+        while (true) {
+            // Input weight
+            cout << "Enter weight in kilograms: ";
+            cin >> weight;
+
+            if (cin.fail() || weight <= 0) { // Check for invalid input or non-positive weight
+                cin.clear();             // Clear error flag
+                cin.ignore(1000, '\n');  // Discard invalid input
+                cout << "Invalid input! Please enter a positive number for weight." << endl;
+            } else {
+                break; // Valid input, exit the loop
+            }
+        }
+
+        while (true) {
+            // Input height
+            cout << "Enter height in meters: ";
+            cin >> height;
+
+            if (cin.fail() || height <= 0) { // Check for invalid input or non-positive height
+                cin.clear();             // Clear error flag
+                cin.ignore(1000, '\n');  // Discard invalid input
+                cout << "Invalid input! Please enter a positive number for height." << endl;
+            } else {
+                break; // Valid input, exit the loop
+            }
+        }
 
         // Calculate BMI
         bmi = weight / (height * height);
@@ -30,6 +52,6 @@ int main() {
 
     } while (choice == 'y' || choice == 'Y');
 
-    cout << "thank you for using, goodbye" << endl;
+    cout << "Thank you for using, goodbye!" << endl;
     return 0;
 }
