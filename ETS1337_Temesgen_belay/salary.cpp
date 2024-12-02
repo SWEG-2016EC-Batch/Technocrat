@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iomanip>
 
 using namespace std;
 
@@ -31,8 +30,7 @@ int main() {
     netSalary = grossSalary - (pension + tax);
 
     // Display results
-    cout << fixed << setprecision(2);
-    cout << "\nEmployee Name: " << employeeName << endl;
+     cout << "\nEmployee Name: " << employeeName << endl;
     cout << "Base Salary: " << baseSalary << endl;
     cout << "Bonus Payment: " << bonusPayment << endl;
     cout << "Gross Salary: " << grossSalary << endl;
