@@ -12,6 +12,10 @@
           4.compute the result as x raised to y
           5.print result
           6.stop
+
+
+
+```mermaid          
 flowchart TD
 A([start])-->B[/read x/]
 B-->C[/read y/]
