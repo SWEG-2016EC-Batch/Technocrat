@@ -6,6 +6,9 @@ Step3: calculate body mass index as BMI=weight/(height*height).
 Step4:print BMI
 Step4: end the program.
 Flowchart:
+
+
+
 ```mermaid
 flowchart TD
     A[Start] --> B[Enter weight in kilograms]
