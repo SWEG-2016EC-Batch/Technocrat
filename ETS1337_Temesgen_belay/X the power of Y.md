@@ -14,3 +14,10 @@ step 2 read the base as x and exponent as y
 step 3 perform the desired(x raised to y) mathimatical operation 
 step 4 print the result 
 step 5 end 
+
+flowchart TD
+A([Start]) --> B[/Input base (x)/]
+B --> C[/Input exponent (y)/]
+C --> D[Calculate result = pow(x, y)]
+D --> E[Display x raised to the power of y is result]
+E --> F([End])
