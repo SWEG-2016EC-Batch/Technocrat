@@ -1,28 +1,55 @@
-The program accepts weight( kgs) and height(m) and calculate BMI. 
+# Problem Analysis
 
-Step1: start the program.
-Step2: read weight and height of a person.
-Step3: calculate body mass index as BMI=weight/(height*height).
-Step4:print BMI
-Step4: end the program.
-Flowchart:
+1. **Input:**
+   - Weight of a person in kilograms.
+   - Height of a person in meters.
 
+2. **Process:**
+   - Calculating BMI using the formula ( \text{BMI} = \frac{\text{weight}}{(\text{height} \times \text{height})} ).
 
+3. **Output:**
+   - Body mass index (BMI).
 
-```mermaid
-flowchart TD
-    A[Start] --> B[Enter weight in kilograms]
-    B --> C[Enter height in meters]
-    C --> D[Calculate BMI as weight / (height * height)]
-    D --> E{BMI Category}
-    E -->|BMI < 18.5| F[Underweight]
-    E -->|18.5 <= BMI < 25| G[Normal weight]
-    E -->|BMI >= 25| H[Overweight]
-    F --> I[Ask user to calculate for another person]
-    G --> I
-    H --> I
-    I -->|Yes (1)| B
-    I -->|No (0)| J[End]
-    I -->|Invalid input| K[Display "Invalid input! Exiting the program."]
-    K --> J
-```
+---
+
+# Algorithm
+
+The program accepts weight (kgs) and height (m) and calculates BMI.
+
+1. Step 1: Start the program.
+2. Step 2: Read weight and height of a person.
+3. Step 3: Calculate body mass index as ( \text{BMI} = \frac{\text{weight}}{(\text{height} \times \text{height})} ).
+4. Step 4: Print BMI.
+   - 4.1 If BMI is below 18.5, print "Under weight."
+   - 4.2 If BMI is between 18.5 to 24.9, print "Normal weight."
+   - 4.3 If BMI is greater than 25, print "Over weight."
+5. Step 5: Ask the user if they want to continue (1 to continue, 0 to stop).
+   - 5.1 If continue (1), repeat the above.
+   - 5.2 If stop (0), break.
+   - 5.3 Else, exit the program.
+6. Step 6: End the program.
+
+---
+
+# Flowchart
+
+graph TD;
+    A[Start] --> B[Input weight in kg]
+    A --> C[Input height in meters]
+    B --> D[Calculate BMI]
+    C --> D
+    D --> E[Display BMI]
+    E --> F{Is BMI < 18.5?}
+    F -- Yes --> G[Display "Under weight!"]
+    F -- No --> H{Is BMI < 25?}
+    H -- Yes --> I[Display "Normal weight!"]
+    H -- No --> J[Display "Over weight!"]
+    G --> K[Ask if user wants to continue?]
+    I --> K
+    J --> K
+    K --> L{Continue?}
+    L -- Yes --> A
+    L -- No --> M[End]
+
+---
+
