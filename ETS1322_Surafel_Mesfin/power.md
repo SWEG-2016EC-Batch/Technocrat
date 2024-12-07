@@ -7,7 +7,7 @@
 ## Output:
 1. power of x
 # Pseudocode
-1.Step1: start the program.
+1. Step1: start the program.
 2. Step2: read x and y .
 3. Step3: calculate x^y and store it in variable result.
 4. Step4: print result.
