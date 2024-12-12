@@ -1,3 +1,6 @@
+pseudocode:
+
+
 1. Start
 
 2. Set the number of rows (`rows`) to 5
