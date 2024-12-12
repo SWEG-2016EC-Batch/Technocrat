@@ -17,17 +17,17 @@ int main(){
     cout << "Grade: ";
     if (total >= 90) {
         cout << "A+\n";
-    } else if (total >= 80) {
+    } else if (total >= 80 && total <90) {
         cout << "A\n";
-    } else if (total >= 75) {
+    } else if (total >= 75 && total <80) {
         cout << "B+\n";
-    } else if (total >= 60) {
+    } else if (total >= 60 && total <75) {
         cout << "B\n";
-    } else if (total >= 55) {
+    } else if (total >= 55 && total <60) {
         cout << "C+\n";
-    } else if (total >= 45) {
+    } else if (total >= 45 && total <55) {
         cout << "C\n";
-    } else if (total >= 30) {
+    } else if (total >= 30 && total <45) {
         cout << "D\n";
     } else {
         cout << "F\n";
