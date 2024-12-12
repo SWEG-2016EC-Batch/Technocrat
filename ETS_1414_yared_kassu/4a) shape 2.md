@@ -14,7 +14,6 @@ pseudocode:
     b. Repeat the following steps while `j` is less than 6:
 
         i. Print the character obtained by adding `j` to
-
  `alphabet`, followed by a space
 
         ii. Increment `j` by 1
