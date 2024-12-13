@@ -1,5 +1,5 @@
 ## Pseudocode:
-1.Start the program 
+1. Start the program 
 2. Read the number.
 3. Initialize sum to 0.
 4. Iterate through all numbers from 1 to half of the number.
