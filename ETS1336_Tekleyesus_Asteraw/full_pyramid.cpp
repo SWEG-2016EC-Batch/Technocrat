@@ -1,8 +1,11 @@
 #include <iostream>
 using namespace std;
 int main() {
-    for(int i = 0;i<4;i++){
-        for(int j=0;j<(4-i);j++){
+    int num;
+    cout<<"enter the dimension of the shapes ";
+    cin>>num;
+    for(int i = 0;i<num;i++){
+        for(int j=0;j<(num - i);j++){
             cout<<" ";
         }
         for(int j=0;j<=i;j++){
