@@ -2,33 +2,33 @@
 using namespace std;
 
 int main() {
-    double test, quiz, project, assignment, finalExam, totalMark;
-    char grade;
+    double exam1, quiz1, project1, task1, finalTest, totalScore;
+    char letterGrade;
 
-    cout << "Enter Test Score (out of 100): ";
-    cin >> test;
-    cout << "Enter Quiz Score (out of 100): ";
-    cin >> quiz;
-    cout << "Enter Project Score (out of 100): ";
-    cin >> project;
-    cout << "Enter Assignment Score (out of 100): ";
-    cin >> assignment;
-    cout << "Enter Final Exam Score (out of 100): ";
-    cin >> finalExam;
+    cout << "Enter Exam 1 Score (out of 100): ";
+    cin >> exam1;
+    cout << "Enter Quiz 1 Score (out of 100): ";
+    cin >> quiz1;
+    cout << "Enter Project 1 Score (out of 100): ";
+    cin >> project1;
+    cout << "Enter Task 1 Score (out of 100): ";
+    cin >> task1;
+    cout << "Enter Final Test Score (out of 100): ";
+    cin >> finalTest;
 
-    totalMark = (test * 0.15) + (quiz * 0.05) + (project * 0.2) + (assignment * 0.1) + (finalExam * 0.5);
+    totalScore = (exam1 * 0.15) + (quiz1 * 0.05) + (project1 * 0.2) + (task1 * 0.1) + (finalTest * 0.5);
 
-    if (totalMark >= 85) grade = 'A+';
-    else if (totalMark >= 70) grade = 'A';
-    else if (totalMark >= 60) grade = 'B+';
-    else if (totalMark >= 50) grade = 'B';
-    else if (totalMark >= 45) grade = 'C+';
-    else if (totalMark >= 40) grade = 'C';
-    else if (totalMark >= 30) grade = 'D';
-    else grade = 'F';
+    if (totalScore >= 90) letterGrade = 'A+';
+    else if (totalScore >= 80) letterGrade = 'A';
+    else if (totalScore >= 75) letterGrade = 'B+';
+    else if (totalScore >= 60) letterGrade = 'B';
+    else if (totalScore >= 55) letterGrade = 'C+';
+    else if (totalScore >= 45) letterGrade = 'C';
+    else if (totalScore >= 30) letterGrade = 'D';
+    else letterGrade = 'F';
 
-    cout << "Total Mark: " << totalMark << endl;
-    cout << "Grade: " << grade << endl;
+    cout << "Total Score: " << totalScore << endl;
+    cout << "Grade: " << letterGrade << endl;
 
     return 0;
 }
