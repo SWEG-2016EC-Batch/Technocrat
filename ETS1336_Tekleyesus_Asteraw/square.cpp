@@ -1,8 +1,11 @@
 #include<iostream>
 using namespace std;
 int main(){
-    for(int i =0;i<5;i++){
-        for(int j=1;j<=5;j++){
+    int num;
+    cout<<"enter the dimension";
+    cin>>num;
+    for(int i =0;i<num;i++){
+        for(int j=1;j<=num;j++){
             cout<<j;
         }
         cout<<endl;
