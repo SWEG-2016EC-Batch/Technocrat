@@ -2,24 +2,24 @@
 using namespace std;
 
 int main() {
-    int n = 5;
+    int dim = 5;
 
     // Pattern 1: Number Pattern (1 2 3 4 5 in rows)
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= n; j++) {
-            cout << j << " ";
+    for (int row = 1; row <= dim; row++) {
+        for (int col = 1; col <= dim; col++) {
+            cout << col << " ";
         }
         cout << endl;
     }
     cout << endl;
 
     // Pattern 2: Alphabet Pattern (A B C D E F in rows, continue to X)
-    char ch = 'A';
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= 6; j++) { // Prints from 'A' to 'F' in each row
-            cout << ch++ << " ";
-            if (ch > 'X') {
-                ch = 'A'; // Reset to 'A' after reaching 'X'
+    char letter = 'A';
+    for (int row = 1; row <= dim; row++) {
+        for (int col = 1; col <= 6; col++) { // Prints from 'A' to 'F' in each row
+            cout << letter++ << " ";
+            if (letter > 'X') {
+                letter = 'A'; // Reset to 'A' after reaching 'X'
             }
         }
         cout << endl;
@@ -27,50 +27,50 @@ int main() {
     cout << endl;
 
     // Pattern 3: Number Pyramid (1, 2 3, ...)
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= i; j++) {
-            cout << j << " ";
+    for (int row = 1; row <= dim; row++) {
+        for (int col = 1; col <= row; col++) {
+            cout << col << " ";
         }
         cout << endl;
     }
     cout << endl;
 
     // Pattern 4: Reverse Number Pyramid with Spaces
-    for (int i = 1; i <= n; i++) {
+    for (int row = 1; row <= dim; row++) {
         // Print spaces for alignment
-        for (int j = 1; j <= n - i; j++) {
+        for (int col = 1; col <= dim - row; col++) {
             cout << "  ";
         }
         // Print numbers in reverse order
-        for (int j = i; j >= 1; j--) {
-            cout << j << " ";
+        for (int col = row; col >= 1; col--) {
+            cout << col << " ";
         }
         cout << endl;
     }
     cout << endl;
 
     // Pattern 5: Character Triangle (A to E)
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= i; j++) {
-            cout << (char)('A' + j - 1) << " ";
+    for (int row = 1; row <= dim; row++) {
+        for (int col = 1; col <= row; col++) {
+            cout << (char)('A' + col - 1) << " ";
         }
         cout << endl;
     }
     cout << endl;
 
     // Pattern 6: Repeated Lowercase Letters (a b c d e)
-    for (int i = 1; i <= n; i++) {
-        for (int j = 0; j < n; j++) {
-            cout << (char)('a' + j) << " ";
+    for (int row = 1; row <= dim; row++) {
+        for (int col = 0; col < dim; col++) {
+            cout << (char)('a' + col) << " ";
         }
         cout << endl;
     }
     cout << endl;
 
     // Pattern 7: Square Star Pattern
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= n; j++) {
-            if (i == 1 || i == n || j == 1 || j == n)
+    for (int row = 1; row <= dim; row++) {
+        for (int col = 1; col <= dim; col++) {
+            if (row == 1 || row == dim || col == 1 || col == dim)
                 cout << "* ";
             else
                 cout << "  ";
@@ -80,8 +80,8 @@ int main() {
     cout << endl;
 
     // Pattern 8: Inverted Half Pyramid
-    for (int i = n; i >= 1; i--) {
-        for (int j = 1; j <= i; j++) {
+    for (int row = dim; row >= 1; row--) {
+        for (int col = 1; col <= row; col++) {
             cout << "* ";
         }
         cout << endl;
@@ -89,9 +89,9 @@ int main() {
     cout << endl;
 
     // Pattern 9: Hollow Inverted Half Pyramid
-    for (int i = n; i >= 1; i--) {
-        for (int j = 1; j <= i; j++) {
-            if (j == 1 || j == i || i == n)
+    for (int row = dim; row >= 1; row--) {
+        for (int col = 1; col <= row; col++) {
+            if (col == 1 || col == row || row == dim)
                 cout << "* ";
             else
                 cout << "  ";
@@ -101,11 +101,11 @@ int main() {
     cout << endl;
 
     // Pattern 10: Full Pyramid
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= n - i; j++) {
+    for (int row = 1; row <= dim; row++) {
+        for (int col = 1; col <= dim - row; col++) {
             cout << "  ";
         }
-        for (int j = 1; j <= 2 * i - 1; j++) {
+        for (int col = 1; col <= 2 * row - 1; col++) {
             cout << "* ";
         }
         cout << endl;
@@ -113,11 +113,11 @@ int main() {
     cout << endl;
 
     // Pattern 11: Inverted Full Pyramid
-    for (int i = n; i >= 1; i--) {
-        for (int j = 1; j <= n - i; j++) {
+    for (int row = dim; row >= 1; row--) {
+        for (int col = 1; col <= dim - row; col++) {
             cout << "  ";
         }
-        for (int j = 1; j <= 2 * i - 1; j++) {
+        for (int col = 1; col <= 2 * row - 1; col++) {
             cout << "* ";
         }
         cout << endl;
@@ -125,12 +125,12 @@ int main() {
     cout << endl;
 
     // Pattern 12: Hollow Full Pyramid
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= n - i; j++) {
+    for (int row = 1; row <= dim; row++) {
+        for (int col = 1; col <= dim - row; col++) {
             cout << "  ";
         }
-        for (int j = 1; j <= 2 * i - 1; j++) {
-            if (j == 1 || j == 2 * i - 1 || i == n)
+        for (int col = 1; col <= 2 * row - 1; col++) {
+            if (col == 1 || col == 2 * row - 1 || row == dim)
                 cout << "* ";
             else
                 cout << "  ";
@@ -141,4 +141,3 @@ int main() {
 
     return 0;
 }
-
