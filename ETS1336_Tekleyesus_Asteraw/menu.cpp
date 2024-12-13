@@ -15,7 +15,6 @@ int swap_digits();
 int main() {
     int choice;
     while (true) {
-        cout << "\nMenu:\n";
         cout << "1. Count digits\n";
         cout << "2. Even digits multiplication\n";
         cout << "3. Digit frequency computation\n";
