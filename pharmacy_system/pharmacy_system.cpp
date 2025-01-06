@@ -57,9 +57,72 @@ int main() {
                     break;
                 }
             }
-
             cout << "⚠️ Invalid input. Please enter a number between 1 and 7: ";
         }
+        if (choice == 1) {
+           if (medicationCount >= MAX_MEDICATIONS) {
+               cout << "❌ Inventory full! Cannot add more medications.\n";
+               continue;
+           }
+           cout << "✍️ Enter medication name: ";
+           cin.ignore();
+           cin.getline(names[medicationCount], 50);
+           cout << "✍️ Enter batch number (alphanumeric): ";
+           while (true) {
+               cin.getline(batchNumbers[medicationCount], 20);
+               bool isValid = true;
+               for (int i = 0; batchNumbers[medicationCount][i] != '\0'; i++) {
+                   if (!isalnum(batchNumbers[medicationCount][i])) {
+                       isValid = false;
+                       break;
+                   }
+               }
+               if (isValid) {
+                   break;
+               }
+               cout << "⚠️ Invalid input. Please enter an alphanumeric batch number: ";
+           }
+
+           cout << "✍️ Enter quantity: ";
+           while (true) {
+               string input;
+               cin >> input;
+               bool isValid = true;
+               int quantity = 0;
+               for (char c : input) {
+
+           if (c < '0' || c > '9') {
+                       isValid = false;
+                       break;
+                   }
+                   quantity = quantity * 10 + (c - '0');
+               }
+
+               if (isValid && quantity > 0) {
+                   quantities[medicationCount] = quantity;
+                   break;
+               }
+
+               cout << "⚠️ Invalid input. Please enter a positive integer quantity: ";
+           }
+
+           cout << "✍️ Enter expiry date (YYYY-MM-DD): ";
+           cin.ignore();
+           cin.getline(expiryDates[medicationCount], 15);
+           int year = (expiryDates[medicationCount][0] - '0') * 1000 +
+                      (expiryDates[medicationCount][1] - '0') * 100 +
+                      (expiryDates[medicationCount][2] - '0') * 10 +
+                      (expiryDates[medicationCount][3] - '0');
+           if (year <= 2027) {
+               cout << "⚠️ It will expire soon, not accepted.\n";
+               continue;
+           }
+
+           medicationCount++;
+           cout << "✅ Medication added successfully!\n";
+
+
+       }
 
 
 
