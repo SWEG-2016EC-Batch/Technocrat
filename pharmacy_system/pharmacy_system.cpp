@@ -123,6 +123,113 @@ int main() {
 
 
        }
+else if (choice == 2) {
+           char batchNumber[20];
+           int quantity;
+           float pricePerUnit;
+
+
+           cout << "🔍 Enter batch number of medication to sell: ";
+           cin.ignore();
+           cin.getline(batchNumber, 20);
+
+
+           cout << "🛒 Enter quantity to sell: ";
+           while (true) {
+               string input;
+               cin >> input;
+
+
+               bool isValid = true;
+               int sellQuantity = 0;
+               for (char c : input) {
+                   if (c < '0' || c > '9') {
+                       isValid = false;
+                       break;
+                   }
+                   sellQuantity = sellQuantity * 10 + (c - '0');
+               }
+
+
+               if (isValid && sellQuantity > 0) {
+                   quantity = sellQuantity;
+                   break;
+               }
+
+
+               cout << "⚠️ Invalid input. Please enter a positive integer quantity: ";
+           }
+
+
+           cout << "💲 Enter price per unit: ";
+           cin >> pricePerUnit;
+
+
+           while (pricePerUnit <= 0) {
+               cout << "⚠️ Invalid input. Please enter a positive price: ";
+               cin >> pricePerUnit;
+           }
+
+
+           bool found = false;
+           for (int i = 0; i < medicationCount; i++) {
+               if (strcmp(batchNumbers[i], batchNumber) == 0) {
+                   found = true;
+                   if (quantities[i] >= quantity) {
+                       quantities[i] -= quantity;
+
+
+                       strcpy(saleMedicationNames[saleCount], names[i]);
+                       saleQuantities[saleCount] = quantity;
+                       saleRevenues[saleCount] = quantity * pricePerUnit;
+
+
+                       cout << "✍️ Enter today's date (YYYY-MM-DD): ";
+                       cin >> saleDates[saleCount];
+
+
+                       saleCount++;
+                       cout << "✅ Sale recorded successfully!\n";
+                   } else {
+                       cout << "⚠️ Error: Not enough stock available!\n";
+                   }
+                   break;
+               }
+           }
+
+
+           if (!found) {
+               cout << "⚠️ Error: Medication with batch number " << batchNumber << " not found.\n";
+           }
+
+
+       } else if (choice == 3) {
+           cout << "\n🔔 Low Stock Medications (Quantity < " << LOW_STOCK_THRESHOLD << "):\n";
+           cout << "--------------------------------------\n";
+           cout << setw(20) << "Name" << setw(20) << "Batch"
+                << setw(10) << "Quantity" << setw(15) << "Expiry Date\n";
+           cout << "---------------------------------------------------------------\n";
+
+
+           bool found = false;
+           for (int i = 0; i < medicationCount; i++) {
+               if (quantities[i] < LOW_STOCK_THRESHOLD) {
+                   cout << setw(20) << names[i]
+                        << setw(20) << batchNumbers[i]
+                        << setw(10) << quantities[i]
+                        << setw(15) << expiryDates[i] << '\n';
+                   cout << "⚠️ There is a shortage of medicine " << names[i] << "!\n";
+                   found = true;
+               }
+           }
+           if (!found) {
+               cout << "✅ No low-stock medications.\n";
+           }
+
+
+       }
+
+
 
 
 
