@@ -227,7 +227,99 @@ else if (choice == 2) {
            }
 
 
-       }
+       } else if (choice == 4) {
+           if (medicationCount == 0) {
+               cout << "📋 No medications to display.\n";
+               continue;
+           }
+
+
+           cout << "\n📊 Pharmacy Stock Report 📊\n";
+           cout << "--------------------------------------\n";
+           cout << setw(20) << "Name" << setw(20) << "Batch No" << setw(10)
+                << "Quantity" << setw(15) << "Expiry Date\n";
+           cout << "---------------------------------------------------------------\n";
+
+
+           for (int i = 0; i < medicationCount; i++) {
+               cout << setw(20) << names[i] << setw(20) << batchNumbers[i]
+                    << setw(10) << quantities[i] << setw(15) << expiryDates[i] << '\n';
+           }
+
+
+           if (saleCount > 0) {
+               cout << "\n📈 Daily Sales Summary 📈\n";
+               cout << "--------------------------------------\n";
+               int totalSalesVolume = 0;
+               float totalRevenue = 0.0;
+
+
+               for (int i = 0; i < saleCount; i++) {
+                   totalSalesVolume += saleQuantities[i];
+                   totalRevenue += saleRevenues[i];
+               }
+
+
+               cout << "Total Sales Volume: " << totalSalesVolume << "\n";
+               cout << "Total Revenue: $" << totalRevenue << "\n";
+
+
+               cout << "\n🏆 Top Selling Medications 🏆\n";
+               cout << "--------------------------------------\n";
+               cout << setw(20) << "Medication Name" << setw(20) << "Quantity Sold\n";
+               cout << "---------------------------------------------------------------\n";
+              
+               int quantitySold[MAX_MEDICATIONS] = {0};
+               for (int i = 0; i < saleCount; i++) {
+                   for (int j = 0; j < medicationCount; j++) {
+                       if (strcmp(saleMedicationNames[i], names[j]) == 0) {
+                           quantitySold[j] += saleQuantities[i];
+                       }
+                   }
+               }
+
+
+               for (int i = 0; i < medicationCount; i++) {
+                   if (quantitySold[i] > 0) {
+                       cout << setw(20) << names[i] << setw(10) << quantitySold[i] << "\n";
+                   }
+               }
+           } else {
+               cout << "✅ No sales recorded for today.\n";
+           }
+
+
+       } else if (choice == 5) {
+           char searchName[50];
+           cout << "🔍 Enter the medication name to search: ";
+           cin.ignore();
+           cin.getline(searchName, 50);
+
+
+           bool found = false;
+           cout << "\n📋 Search Results for '" << searchName << "':\n";
+           cout << "--------------------------------------\n";
+           cout << setw(20) << "Name" << setw(20) << "Batch"
+                << setw(20) << "Quantity" << setw(20) << "Expiry Date\n";
+           cout << "---------------------------------------------------------------\n";
+
+
+           for (int i = 0; i < medicationCount; i++) {
+               if (strcmp(names[i], searchName) == 0) {
+                   cout << setw(20) << names[i]
+                        << setw(20) << batchNumbers[i]
+                        << setw(20) << quantities[i]
+                        << setw(20) << expiryDates[i] << '\n';
+                   found = true;
+               }
+           }
+          
+           if (!found) {
+               cout << "⚠️ Medication not found.\n";
+           }
+         }
+
+
 
 
 
