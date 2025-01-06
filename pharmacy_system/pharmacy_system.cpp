@@ -318,6 +318,66 @@ else if (choice == 2) {
                cout << "⚠️ Medication not found.\n";
            }
          }
+        else if (choice == 6) {
+           char batchNumber[20];
+           int additionalQuantity;
+           cout << "🔍 Enter batch number of medication to update: ";
+           cin.ignore();
+           cin.getline(batchNumber, 20);
+
+
+           cout << "✍️ Enter quantity to add: ";
+           while (true) {
+               string input;
+               cin >> input;
+
+
+               bool isValid = true;
+               int addQuantity = 0;
+               for (char c : input) {
+                   if (c < '0' || c > '9') {
+                       isValid = false;
+                       break;
+                   }
+                   addQuantity = addQuantity * 10 + (c - '0');
+               }
+
+
+               if (isValid && addQuantity > 0) {
+                   additionalQuantity = addQuantity;
+                   break;
+               }
+
+
+               cout << "⚠️ Invalid input. Please enter a positive integer quantity: ";
+           }
+
+
+           bool found = false;
+           for (int i = 0; i < medicationCount; i++) {
+               if (strcmp(batchNumbers[i], batchNumber) == 0) {
+                   quantities[i] += additionalQuantity;
+                   cout << "✅ Quantity updated successfully! New total quantity: " << quantities[i] << '\n';
+                   found = true;
+                   break;
+               }
+           }
+           if (!found) {
+               cout << "⚠️ Error: Medication with batch number " << batchNumber << " not found.\n";
+           }
+       } else if (choice == 7) {
+           cout << "👋 Thank you for your patience. Stay safe and take care\n";
+           break;
+       } else {
+           cout << "⚠️ Invalid choice. Please enter a number between 1 and 7.\n";
+       }
+   } while (choice != 7);
+
+
+   return 0;
+}
+
+
 
 
 
